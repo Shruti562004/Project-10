@@ -14,5 +14,20 @@ public class SpringBootProject10Application {
 		SpringApplication.run(SpringBootProject10Application.class, args);
 System.out.println("Server Started");
 	}
+	
+	@Bean
+	public WebMvcConfigurer corsConfig() {
+		WebMvcConfigurer w = new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**")
+				.allowedOrigins("http://localhost:4200")
+				.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
+			}
+		};
+		return w;
+	}
 
 }
