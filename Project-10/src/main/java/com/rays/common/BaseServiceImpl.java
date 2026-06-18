@@ -36,6 +36,7 @@ public class BaseServiceImpl<T extends BaseDTO, D extends BaseDAOInt<T>> impleme
 	@Transactional(propagation = Propagation.REQUIRED)
 	public long save(T dto, UserContext userContext) throws DuplicateRecordException {
 		Long id = dto.getId();
+		
 		if (id != null && id > 0) {
 			update(dto, userContext);
 		} else {

@@ -23,9 +23,7 @@ public class VoiceForm extends BaseForm {
 
 	public String getCommandName() {
 		return commandName;
-	}
-
-	public void setCommandName(String commandName) {
+	}	public void setCommandName(String commandName) {
 		this.commandName = commandName;
 	}
 
