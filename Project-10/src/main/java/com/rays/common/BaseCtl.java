@@ -22,6 +22,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rays.dto.UserDTO;
 
+
+/**
+ * @author Shruti
+ * This is base Ctl of project 10
+ */
 public class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends BaseServiceInt<T>> {
 
 	@Autowired
@@ -42,6 +47,12 @@ public class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends BaseServic
 		}
 	}
 
+	/**
+	 * @param bindingResult
+	 * @return
+	 * 
+	 *         ddgdfgd dgdfgdfg dfdfdf
+	 */
 	public ORSResponse validate(BindingResult bindingResult) {
 
 		ORSResponse res = new ORSResponse(true);
@@ -125,7 +136,7 @@ public class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends BaseServic
 			for (String id : ids) {
 				baseService.delete(Long.parseLong(id), userContext);
 			}
-			
+
 			T dto = (T) form.getDto();
 
 			List<T> list = baseService.search(dto, Integer.parseInt(pageNo), pageSize, userContext);

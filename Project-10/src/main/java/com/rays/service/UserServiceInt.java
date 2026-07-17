@@ -1,4 +1,4 @@
-package com.rays.service;
+ package com.rays.service;
 
 import com.rays.common.BaseServiceInt;
 import com.rays.common.UserContext;
@@ -12,7 +12,7 @@ public interface UserServiceInt extends BaseServiceInt<UserDTO> {
 
 	public UserDTO authenticate(String loginId, String password);
 
-	public UserDTO forgotPassword(String loginId);
+	public boolean forgotPassword(String loginId);
 
 	public UserDTO changePassword(String loginId, String oldPassword, String newPassword, UserContext userContext);
 

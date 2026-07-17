@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.rays.common.BaseDTO;
 
 @Entity
@@ -36,6 +37,7 @@ public class UserDTO extends BaseDTO {
 	private String roleName = null;
 
 	@Column(name = "dob")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dob;
 
 	@Column(name = "gender", length = 10)

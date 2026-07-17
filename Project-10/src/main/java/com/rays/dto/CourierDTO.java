@@ -67,7 +67,7 @@ public class CourierDTO extends BaseDTO  {
 	@Override
 	public String getLabel() {
 		// TODO Auto-generated method stub
-		return "Courier Name";
+		return "Courier senderName";
 	}
 	@Override
 	public String getTableName() {

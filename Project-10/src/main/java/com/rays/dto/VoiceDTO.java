@@ -41,7 +41,7 @@ public class VoiceDTO  extends BaseDTO{
 
 	@Override
 	public String getValue() {
-		// TODO Auto-generated method stub
+	
 		return commandName;
 	}
 	@Override
@@ -57,7 +57,7 @@ public class VoiceDTO  extends BaseDTO{
 	@Override
 	public String getLabel() {
 		// TODO Auto-generated method stub
-		return "Voice Name";
+		return "Voice commandName";
 	}
 	@Override
 	public String getTableName() {

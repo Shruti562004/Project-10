@@ -11,7 +11,12 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-
+import javax.persistence.Query;
+/**
+ * @author Shruti Rathore
+ * DAO Class
+ * @param <T>
+ */
 public abstract class BaseDAOImpl<T extends BaseDTO> implements BaseDAOInt<T> {
 
 	@PersistenceContext
@@ -101,7 +106,7 @@ public abstract class BaseDAOImpl<T extends BaseDTO> implements BaseDAOInt<T> {
 		List<Predicate> whereClause = getWhereClause(dto, builder, qRoot);
 
 		cq.where(whereClause.toArray(new Predicate[whereClause.size()]));
-
+  
 		TypedQuery<T> query = entityManager.createQuery(cq);
 
 		return query;
@@ -123,6 +128,13 @@ public abstract class BaseDAOImpl<T extends BaseDTO> implements BaseDAOInt<T> {
 	public List search(T dto, UserContext userContext) {
 		return search(dto, 0, 0, userContext);
 	}
+	
+	 public List<?> marksheetMeritList(String hql, UserContext userContext) {
+	        Query q = entityManager.createQuery(hql);
+	        q.setFirstResult(0);
+	        q.setMaxResults(10);
+	        return q.getResultList();
+	    }
 
 	protected boolean isEmptyString(String val) {
 		return val == null || val.trim().length() == 0;
