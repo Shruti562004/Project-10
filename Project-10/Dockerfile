@@ -2,8 +2,8 @@ FROM eclipse-temurin:11-jdk
 
 WORKDIR /app
 
-COPY target/Project-10-0.0.1-SNAPSHOT.jar app.jar
+COPY Project-10-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]

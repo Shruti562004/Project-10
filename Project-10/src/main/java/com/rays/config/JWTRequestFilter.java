@@ -46,7 +46,7 @@ public class JWTRequestFilter extends OncePerRequestFilter {
 			try {   
 
 				String loginId = jwtUtil.extractLoginId(jwtToken);
-
+ 
 				if (!jwtUtil.validateToken(jwtToken, loginId)) {
 					throw new Exception("Invalid JWT token");
 				}

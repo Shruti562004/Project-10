@@ -19,7 +19,7 @@ public class JWTUtil {
 	@Value("${jwt.secret}")
 	private String jwtSecret;
 
-	@Value("${jwt.expiration}")
+	@Value("${jwt.expiration}")        
 	private long jwtExpiration; // in milliseconds
 
 	private static final ObjectMapper objectMapper = new ObjectMapper();

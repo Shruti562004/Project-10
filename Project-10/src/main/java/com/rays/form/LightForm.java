@@ -1,24 +1,22 @@
 package com.rays.form;
 
-import javax.persistence.Column;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import com.rays.common.BaseDTO;
 import com.rays.common.BaseForm;
+import com.rays.dto.FacultyDTO;
 import com.rays.dto.LightDTO;
 
-public class LightForm  extends BaseForm{
+public class LightForm extends BaseForm {
 	@NotEmpty(message = "code is required")
-	private  String code;
-	
+	private String code;
 
 	@NotEmpty(message = "Name is required")
 	private String name;
-	
 
-	@NotEmpty(message = "level is required")
-	private long level;
-	
+	@NotNull(message = "level is required")
+	private Long level;
 
 	@NotEmpty(message = "status is required")
 	private String status;
@@ -39,11 +37,11 @@ public class LightForm  extends BaseForm{
 		this.name = name;
 	}
 
-	public long getLevel() {
+	public Long getLevel() {
 		return level;
 	}
-
-	public void setLevel(long level) {
+ 
+	public void setLevel(Long level) {
 		this.level = level;
 	}
 
@@ -54,17 +52,20 @@ public class LightForm  extends BaseForm{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	@Override
-	public BaseDTO getDto() {
 
-		LightDTO dto = initDTO(new LightDTO());
 
-		dto.setCode(code);
-		dto.setName(name);
-		dto.setLevel(level);
-		dto.setStatus(status);
+	  @Override
+	    public LightDTO getDto() {
 
-		return dto;
-	}
+	  
+	        LightDTO dto = initDTO(new LightDTO());
+	  
+	        dto.setName(name);
+	        dto.setCode(code);
+	        dto.setLevel(level);
+	        dto.setStatus(status);
+
+	        return dto;
+	    }
 
 }

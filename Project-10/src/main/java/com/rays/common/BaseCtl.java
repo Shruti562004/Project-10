@@ -141,7 +141,7 @@ public class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends BaseServic
 
 			List<T> list = baseService.search(dto, Integer.parseInt(pageNo), pageSize, userContext);
 
-			List<T> nextList = baseService.search(dto, Integer.parseInt(pageNo + 1), pageSize, userContext);
+ 			List<T> nextList = baseService.search(dto, Integer.parseInt(pageNo + 1), pageSize, userContext);
 
 			if (list.size() == 0) {
 				res.setSuccess(false);

@@ -91,7 +91,7 @@ public abstract class BaseDAOImpl<T extends BaseDTO> implements BaseDAOInt<T> {
 		}
 
 		return dto;
-	}
+	}      
 
 	protected TypedQuery<T> createCriteria(T dto, UserContext userContext) {
 

@@ -19,7 +19,7 @@ public class LightDTO  extends BaseDTO{
 	private String name;
 	
 	@Column(name = "level")
-	private long level;
+	private Long level;
 	
 	@Column(name = "status", length = 50)
 	private String status;
@@ -39,10 +39,10 @@ public class LightDTO  extends BaseDTO{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public long getLevel() {
+	public Long getLevel() {
 		return level;
 	}
-	public void setLevel(long level) {
+	public void setLevel(Long level) {
 		this.level = level;
 	}
 	public String getStatus() {

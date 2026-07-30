@@ -52,7 +52,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserDTO, UserDAOInt> implem
 
 	@Override
 	public UserDTO authenticate(String loginId, String password) {
-
+         
 		UserDTO dto = findByLoginId(loginId, null);
 
 		if (dto != null) {
