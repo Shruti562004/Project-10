@@ -2,7 +2,7 @@ FROM eclipse-temurin:11-jdk
 
 WORKDIR /app
 
-COPY Project-10-0.0.1-SNAPSHOT.jar app.jar
+COPY target/Project-10-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
