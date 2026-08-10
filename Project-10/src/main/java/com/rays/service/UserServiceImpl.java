@@ -35,7 +35,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserDTO, UserDAOInt> implem
 	        baseDao.add(dto, userContext);
 
 	        HashMap<String, String> map = new HashMap<>();
-	        map.put("login", dto.getLoginId());
+	        map.put("login", dto.    getLoginId());
 	        map.put("password", dto.getPassword());
 	        map.put("firstName", dto.getFirstName());
 
